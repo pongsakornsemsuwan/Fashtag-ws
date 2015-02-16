@@ -2,11 +2,11 @@
 ApplicationName=Fashtag
 AwsCredentialFile=C:\Users\Pongsakorn\.elasticbeanstalk\aws_credential_file
 DevToolsEndpoint=git.elasticbeanstalk.ap-southeast-1.amazonaws.com
-EnvironmentName=fashtag-env
+EnvironmentName=fashtag-dev
 EnvironmentTier=WebServer::Standard::1.0
 EnvironmentType=SingleInstance
 InstanceProfileName=aws-elasticbeanstalk-ec2-role
-OptionSettingFile=C:\Users\Pongsakorn\Documents\GitHub\Fashtag\.elasticbeanstalk\optionsettings.Fashtag-env
+OptionSettingFile=C:\Users\Pongsakorn\Documents\GitHub\Fashtag\.elasticbeanstalk\optionsettings.fashtag-dev
 RdsEnabled=No
 Region=ap-southeast-1
 ServiceEndpoint=https://elasticbeanstalk.ap-southeast-1.amazonaws.com
