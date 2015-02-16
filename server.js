@@ -15,6 +15,10 @@ var server = restify.createServer();
 server.use(restify.bodyParser());
 server.use(passport.initialize());
 
+server.get('/test',function(req,res,next){
+  res.send('ok');
+  res.next();
+})
 
 //passport custom callback
 server.post('/auth',

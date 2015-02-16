@@ -1,0 +1,14 @@
+[global]
+ApplicationName=Fashtag
+AwsCredentialFile=C:\Users\Pongsakorn\.elasticbeanstalk\aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.ap-southeast-1.amazonaws.com
+EnvironmentName=fashtag-env
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=C:\Users\Pongsakorn\Documents\GitHub\Fashtag\.elasticbeanstalk\optionsettings.Fashtag-env
+RdsEnabled=No
+Region=ap-southeast-1
+ServiceEndpoint=https://elasticbeanstalk.ap-southeast-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2014.09 v1.1.0 running Node.js
+
