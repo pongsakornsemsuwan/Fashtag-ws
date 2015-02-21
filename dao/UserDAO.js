@@ -11,8 +11,8 @@ var userDAO = {
     });
   },
 
-  addUser : function (client, username, hashPassword, callback) {
-    client.query(userSQL.ADD_USER, [username, hashPassword], function (err, result) {
+  addUser : function (client, username, hashPassword, email, callback) {
+    client.query(userSQL.ADD_USER, [username, hashPassword, email], function (err, result) {
 
       return callback(err, result);
     });

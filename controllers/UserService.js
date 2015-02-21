@@ -30,6 +30,7 @@ var userAPI = {
 
     var username = req.params['username'];
     var password = req.params['password'];
+    var email = req.params['email'];
 
     //bcrypt.genSaltSync(5);
     var hashPassword = bcrypt.hashSync(password);
@@ -51,7 +52,7 @@ var userAPI = {
           })
         },
         function(callback){
-          userDAO.addUser(client, username, hashPassword, function(err, result){
+          userDAO.addUser(client, username, hashPassword, email, function(err, result){
 
             try {
               userModel = result.rows[0];

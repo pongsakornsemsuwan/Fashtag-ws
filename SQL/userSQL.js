@@ -7,9 +7,10 @@ var sql = {
   ' INSERT INTO users ( ' +
   ' username, ' +
   ' password, ' +
+  ' email, ' +
   ' create_dt, ' +
   ' rev_dt )' +
-  ' VALUES( $1, $2, current_timestamp , current_timestamp )' +
+  ' VALUES( $1, $2, $3, current_timestamp , current_timestamp )' +
   ' RETURNING user_id, username',
 
   GET_USER_BY_TOKEN : 'SELECT ',
