@@ -66,7 +66,7 @@ var userAPI = {
         function(callback){
 
           var token = jwt.encode(userModel, secret);
-          userLoginDAO.addToken(client, token, userModel.user_id , function(err, result){
+          userLoginDAO.addToken(client, userModel.user_id , token, function(err, result){
             if(err){
               done(client);
               return callback(err);

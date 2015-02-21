@@ -8,7 +8,7 @@ var user = require('./controllers/UserService.js');
 var photo = require('./controllers/PhotoService.js');
 require('./controllers/auth.js');
 
-global.config = require('./config.js')[process.env.NODE_ENV || 'development'];
+global.config = require('./config.js')[process.env.NODE_ENV || 'local'];
 
 
 var server = restify.createServer();

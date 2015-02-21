@@ -12,7 +12,7 @@ var config =
   "development":
   {
     "url" : 123,
-    "dbConnectionUrl" : 'postgres://fashtag:3zq9hrd5@fashtag.cn1670bvaahe.ap-southeast-1.rds.amazonaws.com/postgres'
+    "dbConnectionUrl" : 'postgres://fashtag:fashtagdev@fashtag.cn1670bvaahe.ap-southeast-1.rds.amazonaws.com/postgres'
   },
 
   "production":
