@@ -29,6 +29,7 @@
         url = decodeURIComponent(url[1]);
       } else {
         url = "http://fashtag-dev.elasticbeanstalk.com/api-doc";
+        //url = "http://localhost:8080/api-doc";
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
@@ -51,7 +52,7 @@
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
         },
-        docExpansion: "none",
+        docExpansion: "list",
         sorter : "alpha"
       });
 
