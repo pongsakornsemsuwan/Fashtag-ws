@@ -1,7 +1,7 @@
 /**
  * Created by Pongsakorn on 2/9/2015.
  */
-var userSQL = require('./../SQL/userSQL.js');
+var userSQL = require('./../SQL/UserSQL.js');
 
 var userDAO = {
 

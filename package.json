@@ -21,6 +21,7 @@
     "passport-http": "^0.2.2",
     "passport-local": "^1.0.0",
     "pg": "^4.2.0",
-    "restify": "^2.8.5"
+    "restify": "^2.8.5",
+    "swagger-node-restify": "^0.1.2"
   }
 }

@@ -6,14 +6,30 @@ var restify = require('restify');
 var passport = require('passport');
 var user = require('./controllers/UserService.js');
 var photo = require('./controllers/PhotoService.js');
+var fs = require('fs');
 require('./controllers/auth.js');
 
 global.config = require('./config.js')[process.env.NODE_ENV || 'local'];
 
 
+restify.defaultResponseHeaders = function(data) {
+  this.header('Access-Control-Allow-Origin', '*');
+  this.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+};
+
 var server = restify.createServer();
 server.use(restify.bodyParser());
 server.use(passport.initialize());
+
+server.get(/\/api-doc\/?.*/, restify.serveStatic({
+  directory: './public',
+  default: 'doc.json'
+}));
+
+server.get(/\/swagger\/?.*/, restify.serveStatic({
+  directory: './public',
+  default: 'index.html'
+}));
 
 server.get('/test',function(req,res,next){
   res.send('ok');
@@ -81,8 +97,6 @@ server.put('/editemail',
   }
 );
 
-
-
 server.get('/users',
   passport.authenticate('basic',{ session: false}),
   function( req, res ){
@@ -98,75 +112,6 @@ server.post('/users',
     res.end('it\'work');
   })
 );
-
-server.get('/users/:userService-id',
-  passport.authenticate('basic',{ session: false}),
-  function(req,res){user.getUser(req,res)}
-);
-
-
-server.post('/users/login', function( req,res,next){
-  user.login(req, res );
-});
-
-server.get('/users/self/feed', function( req,res,next){
-  user.getOwnFeed(req, res, next);
-});
-
-server.get('/users/:userService-id/media/recent', function ( req, res, next){
-
-});
-
-server.get('/users/search', function searchUsers( req, res, next){
-
-});
-
-/* ------------ PHOTO ---------------- */
-
-//add photo
-server.post('/photo/', function addPhoto( req, res, next ){
-
-});
-
-//get single photo
-server.get('/photo/:photo-id', function getPhoto( req, res, next ){
-  photo.getPhoto( req, res, next);
-  next();
-});
-
-//get photos
-server.get('/photo/search', function searchPhoto( req, res, next ){
-
-});
-
-
-/* --------- RELATIONSHIP ----------- */
-
-//Get the list of users this userService follows
-server.get('/users/:userService-id/follows', function getFollow( req, res, next){
-
-});
-
-//Get the list of users this userService is followed by.  (get follower)
-server.get('/users/:userService-id/followed-by', function getFollower( req, res, next){
-
-});
-
-//Modify the relationship between the current userService and the target userService.
-//One of follow/unfollow/block/unblock/approve/ignore.
-server.post('/users/:userService-id/relationship', function modifyRelation( req, res, next){
-
-});
-
-
-/* --------- OBJECT ----------- */
-server.get('/object/:object-id', function getObject( req, res, next){
-
-});
-
-
-
-
 
 server.listen(process.env.PORT || 8080, function() {
   console.log('%s listening at %s', server.name, server.url);

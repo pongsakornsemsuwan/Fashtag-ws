@@ -101,7 +101,7 @@ router.route('/usersasd').get(
   }
 );
 
-app.use('/api',router);
+app.use('/api-doc',router);
 //app.get('/hello/:name', respond);
 //
 //app.head('/hello/:name', respond);
