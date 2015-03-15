@@ -18,6 +18,13 @@ var userDAO = {
     });
   },
 
+  getUserByUserId : function (client, sourceUserId, targetUserId, callback){
+    client.query(userSQL.GET_USER_BY_USERID, [sourceUserId, targetUserId], function(err,result){
+
+      return callback(err,result);
+    });
+  },
+
   updateUser : function (client, userModel, callback){
     client.query( userSQL.UPDATE_USER,
       [userModel.username, userModel.displayName,
@@ -32,6 +39,7 @@ var userDAO = {
       return callback(err, result);
     })
   }
+
 
 }
 

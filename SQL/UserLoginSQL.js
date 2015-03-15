@@ -12,7 +12,13 @@ var sql = {
   ' UPDATE user_login ' +
   ' SET EXPIRE_DT = current_timestamp ' +
   ' WHERE access_token = $1 ' +
-  ' AND user_id = $2 '
+  ' AND user_id = $2 ',
+
+  GET_TOKEN :
+  ' SELECT access_token ' +
+  ' FROM user_login' +
+  ' WHERE access_token = $1 ' +
+  ' AND expire_dt IS NULL'
 
 
 }

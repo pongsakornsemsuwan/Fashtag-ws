@@ -28,6 +28,24 @@ var sql = {
   ' FROM users ' +
   ' WHERE username = $1 ',
 
+  GET_USER_BY_USERID :
+  ' SELECT user_id, ' +
+  ' username, ' +
+  ' password, ' +
+  ' profile_picture_big,' +
+  ' profile_picture_medium, ' +
+  ' profile_picture_small, ' +
+  ' display_name, ' +
+  ' email, ' +
+  ' user_info, ' +
+  ' case (select exists(select activity_id from activity where source_user_id=$1 and target_user_id=$2))' +
+  ' when \'t\' then \'following\' ' +
+  ' when \'f\' then \'not following\' ' +
+  ' end as is_following' +
+  ' FROM users u ' +
+  ' WHERE u.user_id = $2 ',
+
+
   GET_USER_PROFILE :
   ' SELECT user_id, ' +
   ' display_name, ' +

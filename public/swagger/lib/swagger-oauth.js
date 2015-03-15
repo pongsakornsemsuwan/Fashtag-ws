@@ -45,7 +45,7 @@ function handleLogin() {
       '<div class="api-doc-popup-dialog">',
       '<div class="api-doc-popup-title">Select OAuth2.0 Scopes</div>',
       '<div class="api-doc-popup-content">',
-        '<p>Scopes are used to grant an application different levels of access to data on behalf of the end user. Each API may declare one or more scopes.',
+        '<p>Scopes are used to grant an application different levels of access to data on behalf of the end userService. Each API may declare one or more scopes.',
           '<a href="#">Learn how to use</a>',
         '</p>',
         '<p><strong>' + appName + '</strong> API requires the following scopes. Select which ones you want to grant to Swagger UI.</p>',

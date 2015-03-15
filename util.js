@@ -4,14 +4,7 @@
 
 var util = {
 
-  rowToJSON:function rowToJSON(row){
-    try {
-      row.data = JSON.parse(row.data);
-    } catch (e) {
-      row.data = null;
-    }
-    return row;
-  }
+
 };
 
 
